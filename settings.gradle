@@ -1,22 +1,19 @@
 pluginManagement {
-    repositories {
-        //mavenLocal()
-        //maven { url = '...' }
-        gradlePluginPortal()
-    }
+    repositories { gradlePluginPortal() }
 }
 
-buildCache {
-    local {
-        directory = new File(rootDir, 'build-cache')
-    }
+dependencyResolutionManagement {
+    repositories { mavenCentral() }
 }
 
 rootProject.name = 'crediya-solicitudes-ms'
 
-include ':app-service'
-include ':model'
-include ':usecase'
-project(':app-service').projectDir = file('./applications/app-service')
-project(':model').projectDir = file('./domain/model')
-project(':usecase').projectDir = file('./domain/usecase')
+include ':app-service', ':model', ':usecase'
+include 'driven-adapters:persistence-r2dbc'
+include 'entry-points:webflux'
+
+project(':app-service').projectDir                        = file('applications/app-service')
+project(':model').projectDir                              = file('domain/model')
+project(':usecase').projectDir                            = file('domain/usecase')
+project(':driven-adapters:persistence-r2dbc').projectDir  = file('infrastructure/driven-adapters/persistence-r2dbc')
+project(':entry-points:webflux').projectDir               = file('infrastructure/entry-points/webflux')

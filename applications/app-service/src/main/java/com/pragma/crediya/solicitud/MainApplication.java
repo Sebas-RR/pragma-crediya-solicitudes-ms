@@ -1,4 +1,4 @@
-package com.pragma.crediya.solicitudes;
+package com.pragma.crediya.solicitud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

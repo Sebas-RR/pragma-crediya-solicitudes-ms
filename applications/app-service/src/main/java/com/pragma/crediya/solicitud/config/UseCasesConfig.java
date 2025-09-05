@@ -1,4 +1,4 @@
-package com.pragma.crediya.solicitudes.config;
+package com.pragma.crediya.solicitud.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
